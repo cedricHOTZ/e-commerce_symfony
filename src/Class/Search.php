@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Class;
+use App\Entity\Category;
+
+class Search{
+    /**
+     * Undocumented variable
+     *
+     * @var string
+     */
+    public $string = '';
+    
+    /**
+     *
+     * @var Category[]
+     */
+
+    public $categories = [];
+}
+
