@@ -4,8 +4,11 @@ namespace App\Form;
 
 use App\Class\Search;
 use App\Entity\Category;
+use Doctrine\DBAL\Types\FloatType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -47,6 +50,21 @@ class SearchType extends AbstractType
                 'expanded' => true,
                 'attr' => [
                     'class' => 'text-white',
+                ]
+            ])
+            ->add('min' , IntegerType::class,[
+                'label' => false,
+                'required' => false,
+                'attr' => [
+                    'placeholder' => 'Prix mini',
+                ]
+            ])
+
+            ->add('max' , IntegerType::class,[
+                'label' => false,
+                'required' => false,
+                'attr' => [
+                    'placeholder' => 'Prix max',
                 ]
             ])
             ->add('submit',SubmitType::class,[

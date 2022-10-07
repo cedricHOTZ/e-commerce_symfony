@@ -10,6 +10,21 @@ class Search{
      * @var string
      */
     public $string = '';
+
+/**
+ * Undocumented variable
+ *
+ * @var null|float
+ */
+    public $max;
+
+
+/**
+ * Undocumented variable
+ *
+ * @var null|float
+ */
+    public $min;
     
     /**
      *
