@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<div class="container mx-auto mt-7 ">
+<h2 class="font-bold text-2xl">Nos meilleures ventes</h2>
+<p class="mb-4 mt-2 font">Découvrez les articles les plus vendus</p>
+
+<div class="wrappers-isBest">
+{% for product in isBest %}
+
+
+
+<div class="products-isBest">
+  <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
+    <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="/uploads/{{product.illustration}}" alt="" />
+    <div class="p-6 flex flex-col justify-start">
+      <h5 class="text-gray-900 text-xl font-medium mb-2">{{product.name}}</h5>
+      <p class="text-gray-700 text-base mb-4">
+       {{product.subtitle}}
+      </p>
+      <p class="text-gray-600 text-xs">{{(product.price /100)|number_format(2,",")}}€</p>
+      <a href="{{ path('app_product', {slug:product.slug} )}}">
+					<button class=" inline-flex items-center justify-left p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+						<span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+							voir l'article
+						</span>
+					</button>
+				</a>
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+</div>
+</div>
+
+{% endblock %}
