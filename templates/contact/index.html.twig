@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact | La French Boutique{% endblock %}
+
+{% block body %}
+<!-- Container for demo purpose -->
+<div class="container my-24 px-6 mx-auto">
+
+  <!-- Section: Design Block -->
+  <section class="mb-32 text-gray-800">
+    <div class="flex flex-wrap">
+      <div class="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-6/12 px-3 lg:px-6">
+        <h2 class="text-3xl font-bold mb-6">Nous contacter</h2>
+        <p class="text-gray-500 mb-6">
+          N'hésitez pas à prendre contact avec notre équipe, nous vous répondrons dans les meilleurs délais.
+        </p>
+         <p class="text-gray-500 mb-2">La French Boutique</p>
+        <p class="text-gray-500 mb-2">2 rue des lilas, 67000 STRASBOURG</p>
+        <p class="text-gray-500 mb-2">+ 03 89 67 89 34</p>
+        <p class="text-gray-500 mb-2">contact@lafrenchboutique.com</p>
+      </div>
+      <div class="grow-0 shrink-0 basis-auto mb-12 md:mb-0 w-full md:w-6/12 px-3 lg:px-6">
+       <form>
+         {{ form_start(form) }}
+          <div class="form-group mb-6">
+           {{form_row(form.lastName)}}
+          </div>
+          <div class="form-group mb-6">
+             {{ form_row(form.firstName) }}
+          </div>
+           <div class="form-group mb-6">
+             {{ form_row(form.phone) }}
+          </div>
+           <div class="form-group mb-6">
+             {{ form_row(form.email) }}
+          </div>
+          <div class="form-group mb-6">
+            {{ form_row(form.object) }}
+          </div>
+          <div class="form-group mb-6">
+            {{ form_row(form.content) }}
+          </div>
+          <div class="form-group form-check text-center mb-6">
+           {{ form_row(form.confidentialite) }}
+            {# <input type="checkbox"
+              class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
+              id="exampleCheck87" checked>
+            <label class="form-check-label inline-block text-gray-800" for="exampleCheck87">En cochant cette case, vous acceptez d’être recontacté par email, conformément à notre Politique de Confidentialité.</label> #}
+          </div>
+          {{ form_row(form.submit) }}
+          {# <button type="submit" class="
+            w-full
+            px-6
+            py-2.5
+            bg-blue-600
+            text-white
+            font-medium
+            text-xs
+            leading-tight
+            uppercase
+            rounded
+            shadow-md
+            hover:bg-blue-700 hover:shadow-lg
+            focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+            active:bg-blue-800 active:shadow-lg
+            transition
+            duration-150
+            ease-in-out">ENVOYER</button> #}
+      {{ form_end(form) }}
+      </div>
+      </form>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+
+</div>
+<!-- Container for demo purpose -->
+
+{% endblock %}
